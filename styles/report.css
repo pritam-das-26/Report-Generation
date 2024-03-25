@@ -1,0 +1,130 @@
+* {
+  font-family: Arial, sans-serif;
+}
+.table1 tr td {
+  width: fit-content;
+  font-size: 13px;
+  padding: 0 7px;
+}
+
+.table1 tr th {
+  width: fit-content;
+  font-size: 13px;
+  padding: 0 7px;
+}
+
+.table2 tr td {
+  font-size: 13px;
+  padding: 0 15px;
+}
+
+.table2 tr th {
+  font-size: 13px;
+  padding: 0 15px;
+}
+table tr td {
+  width: fit-content;
+  font-size: 13px;
+  padding: 0 7px;
+}
+
+table tr th {
+  width: fit-content;
+  font-size: 13px;
+  padding: 0 7px;
+}
+
+@page {
+  size: A4;
+  margin: 1cm;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@page {
+  @bottom-right {
+    background: #fbc847;
+    content: counter(page);
+    height: 0.5cm;
+    text-align: center;
+    width: 0.5cm;
+  }
+}
+
+#header1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+#thermalinspection {
+  font-size: 0.49cm;
+  font-weight: bold;
+}
+
+#thermalval {
+  font-size: 0.38cm;
+  font-weight: bold;
+}
+
+#content {
+  display: flex;
+  margin-top: 1.06cm;
+  justify-content: space-between;
+}
+
+#mainContent {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: fit-content;
+  background: rgb(241, 238, 238);
+  height: fit-content;
+  margin-top: 0.63cm;
+  margin-right: 0.35cm;
+  border-radius: 0.07cm;
+}
+
+.imgformat {
+  font-size: 0.38cm;
+  font-weight: bold;
+}
+
+.imgdefect {
+  width: 8.33cm;
+  height: 4.17cm;
+  padding: 0.35cm;
+}
+
+.imgcont {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+}
+
+.tablecont {
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 0.1cm;
+  margin-top: 0.42cm;
+  font-size: 0.34cm;
+  width: 7.54cm;
+}
+
+.subcont {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.02cm solid gray;
+  padding: 0.21cm;
+}
+
+.subcontattr {
+  width: fit-content;
+  font-weight: bold;
+}

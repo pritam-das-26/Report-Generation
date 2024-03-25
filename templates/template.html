@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../styles/report.css">
+</head>
+
+<body>
+  <header id="header1">
+    <img style="height: 25px; width: 140px" src="../assets/Datasee rebranded logo-01 (1).png" />
+
+    <div style="float:right;display:flex;flex-direction:column">
+      <span id="thermalinspection style=" style="float:right">THERMAL INSPECTION
+        REPORT</span>
+      <span id="thermalval">{{capacity}} | {{location}} | {{date}}</span>
+    </div>
+  </header>
+
+  <section id="content">
+    <div>
+      <table class="table1">
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Site</th>
+            <th>Location (WG84)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{Module}}</td>
+            <td>{{Table}}</td>
+            <td>{{Module}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <table class="table2">
+        <thead>
+          <tr>
+            <th>Inspection Date</th>
+            <th>Project Manager</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{Table}}</td>
+            <td>{{Module}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr style="margin-top: 10px" />
+  {% for key, value in data.items() %}
+  <h3>{{key+1}}.{{value['Defect']}}</h3>
+  <div style="display:flex;width:100%;justify-content: space-between;">
+    <div style="display: flex; flex-direction: column">
+      <div style="margin-top: 10px">
+        <span style="font-size: 14px; font-weight: bold; color: cadetblue">Defect Details</span>
+        <div class="tablecont">
+          <div class="subcont">
+            <span class="subcontattr">Module No.</span>
+            <span style="width: fit-content">{{value['Module No.']}}</span>
+          </div>
+
+          <div class="subcont">
+            <span class="subcontattr""
+                >Table No.</span
+              >
+              <span style=" width: fit-content"> {{value['Table No.']}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 10px">
+        <span style="font-size: 14px; font-weight: bold; color: cadetblue">Temperature Details</span>
+        <div class="tablecont">
+          <div class="subcont">
+            <span class="subcontattr""
+                >Minimum Temperature</span
+              >
+              <span style=" width: fit-content">{{value['Minimum Temperature']}}(°C)</span>
+          </div>
+
+          <div class="subcont">
+            <span class="subcontattr">Maximum Temperature</span>
+            <span style="width: fit-content"> {{value['Maximum Temperature']}}(°C)</span>
+          </div>
+
+          <div class="subcont">
+              <span class=" subcontattr">Average Temperature</span>
+            <span style="width: fit-content">{{value['Average Temperature']}}(°C)</span>
+          </div>
+          
+          <div class="subcont">
+            <span class=" subcontattr">Delta(Δ) Temp.(°C)</span>
+          <span style="width: fit-content">{{value['Delta(Δ) Temperature']}}(°C)</span>
+
+        </div>
+        </div>
+      </div>
+      <div style="margin-top:10px">
+        <span style="font-size: 14px; font-weight: bold; color: cadetblue">Layout Location Details</span>
+        <div class="tablecont">
+          <div class="subcont">
+            <span class="subcontattr">Latitude</span>
+            <span style="width: fit-content">{{value['Latitude']}}</span>
+          </div>
+
+          <div class="subcont">
+            <span class="subcontattr">Longitude</span>
+            <span style="width: fit-content"> {{value['Longitude'] }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mainContent">
+
+      <div class="imgcont">
+        <span class="imgformat">Thermal</span>
+        <img class="imgdefect" src="{{value['rgb_image']}}.JPG" alt="defect1" />
+      </div>
+  
+      <div class="imgcont">
+        <span class="imgformat">Rgb</span>
+        <img class="imgdefect" src="{{value['thermal_image']}}.JPG" alt="defect2" />
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:20px"></div>
+  <hr/>
+    {% endfor %}
+</body>
+
+</html>

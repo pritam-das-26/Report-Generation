@@ -1,0 +1,14 @@
+aws_path_configuration:
+    csv_file_name1: "{AWS_PROJECT_PATH}/csv/abc.csv"
+    csv_file_name2: "{AWS_PROJECT_PATH}/csv/abc.csv"
+    thermal_image_file: "{AWS_PROJECT_PATH}/thermal"
+    RGB_image_file: "{AWS_PROJECT_PATH}/rgb"
+    Bucket_name: "reportdemoimages"
+
+local_path_configuration:
+    csv_file_name_1_local: "{BASE_PATH}/csv/abc.csv"
+    csv_file_name_2_local: "{BASE_PATH}/csv/abc.csv"
+    thermal_image_file_local: "{BASE_PATH}/thermal"
+    RGB_image_file_local: "{BASE_PATH}/rgb"
+   
+    
